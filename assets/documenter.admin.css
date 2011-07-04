@@ -66,7 +66,7 @@ a.documenter.button:hover {
 
 #documenter-drawer a.documenter.toggle {
 	position: absolute;
-	top: -6px;
+	top: 5px;
 	right: 0;
 	border: 1px solid rgba(155, 155, 155, 0.2);	
 	border-radius: 1em;
@@ -81,6 +81,11 @@ a.documenter.button:hover {
 	line-height: 1;
 	margin: 2px 0;
 	padding: 1px 6px 2px 8px;
+}
+
+#documenter-drawer a.documenter.toggle:hover {
+	color: #fff;
+	border-color: rgba(155, 155, 155, 0.5);
 }
 
 #documenter-drawer a.documenter.toggle span {
@@ -99,12 +104,6 @@ a.documenter.button:hover {
 	transform: rotate(90deg);	
 }
 
-#documenter-drawer a.documenter.toggle:hover {
-	color: #fff;
-	border-color: rgba(155, 155, 155, 0.5);
-}
-
-
 /*================================================
 	DRAWER
 ================================================*/
@@ -121,11 +120,20 @@ a.documenter.button:hover {
 	color: #b2b2b2;
 	padding: 0;
 	overflow: hidden;
+	line-height: 1.6;
 }
 
 /*================================================
 	DRAWER HEADINGS
 ================================================*/
+
+#documenter-drawer h2 {
+	margin: 3em 19px 1.2em;
+	padding: 0 0 1.2em 0;
+	color: #fff;
+	border: none;
+	padding: 0;
+}
 
 #documenter-drawer h2#documenter-title {
 	margin: 21px 19px 1.2em;
@@ -134,36 +142,34 @@ a.documenter.button:hover {
 	width: 256px;
 }
 
-#documenter-drawer h1, 
-#documenter-drawer h2, 
-#documenter-drawer h3, 
-#documenter-drawer h4 {
+#documenter-drawer .documenter-content h1, 
+#documenter-drawer .documenter-content h2, 
+#documenter-drawer .documenter-content h3 {
 	text-shadow: -1px 2px 3px rgba(39,39,38,0.5);
 	background: transparent;
 	border-bottom: 1px solid rgba(219,219,219,0.1);
-}
-
-#documenter-drawer h2, 
-#documenter-drawer h1 {
-	margin: 3em 19px 1.2em;
-	padding: 0 0 1.2em 0;
-	color: #fff;
-	border: none;
-	padding: 0;
-}
-
-#documenter-drawer h3 {
-	margin: 1em 0 0;
-	padding: 0 0 0.5em;
+	margin: 0;
+	padding: 1em 0 0.5em;
 	position: relative;
 	color: #e5e5e5;
 	cursor: pointer;
+	font-size: 1em;
+	font-weight: bold;
 }
 
-#documenter-drawer h4 {
+#documenter-drawer .documenter-content h1, 
+#documenter-drawer .documenter-content h2 {
+	margin-bottom: 1em; 
+}
+
+#documenter-drawer .documenter-content h4 {
 	margin: 0;
 	border: none;
+	text-shadow: -1px 2px 3px rgba(39,39,38,0.5);
+	background: transparent;
+	padding: 0 0 0.5em;
 }
+
 
 /*================================================
 	DRAWER CONTENT 
@@ -226,7 +232,8 @@ a.documenter.button:hover {
 	background: #242421;
 	color: #a7a7a6;
 	font-size: 1em;
-	padding: 0.1em 0.2em;
+	padding: 0 0.3em;
+	margin: 0 0.1em;
 }
 
 #documenter-drawer div.note {
@@ -234,7 +241,7 @@ a.documenter.button:hover {
 	background: #242421;
 	color: #a7a7a6;
 	padding: 0.5em;
-	margin: 2em 0 0 -0.5em;
+	margin: 2em 0 1.5em -0.5em;
 }
 
 #documenter-drawer div.block {
