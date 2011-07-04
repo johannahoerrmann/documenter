@@ -128,7 +128,7 @@ a.documenter.button:hover {
 
 
 /*================================================
-	DRAWER DEFAULTS
+	DRAWER
 ================================================*/
 
 #documenter-drawer {
@@ -140,23 +140,62 @@ a.documenter.button:hover {
 	width: 0;
 	display: block;
 	text-shadow: -1px 2px 3px rgba(39, 39, 38, 0.5);
-	color: rgba(255, 255, 255, 0.7);
+	color: #b2b2b2;
 	padding: 0;
 	overflow: hidden;
 }
 
-#documenter-drawer .documenter-content {
-	margin: 0 19px 19px;
-	border-top: 1px solid rgba(219, 219, 219, 0.1);
-	padding: 19px 0 0;
-	width: 262px;
-}
+/*================================================
+	DRAWER HEADINGS
+================================================*/
 
 #documenter-drawer h2#documenter-title {
 	margin: 21px 19px 1.2em;
 	border: none;
 	padding: 0 25px 0 0;
 	width: 256px;
+}
+
+#documenter-drawer h1, 
+#documenter-drawer h2, 
+#documenter-drawer h3, 
+#documenter-drawer h4 {
+	text-shadow: -1px 2px 3px rgba(39,39,38,0.5);
+	background: transparent;
+	border-bottom: 1px solid rgba(219,219,219,0.1);
+}
+
+#documenter-drawer h2, 
+#documenter-drawer h1 {
+	margin: 3em 19px 1.2em;
+	padding: 0 0 1.2em 0;
+	color: #fff;
+	border: none;
+	padding: 0;
+}
+
+#documenter-drawer h3 {
+	margin: 1em 0 0;
+	padding: 0 0 0.5em;
+	position: relative;
+	color: #e5e5e5;
+	cursor: pointer;
+}
+
+#documenter-drawer h4 {
+	margin: 0;
+	border: none;
+}
+
+/*================================================
+	DRAWER CONTENT 
+================================================*/
+
+#documenter-drawer .documenter-content {
+	margin: 0 19px 19px;
+	border-top: 1px solid rgba(219, 219, 219, 0.1);
+	padding: 0;
+	width: 262px;
 }
 
 #documenter-drawer a {
@@ -167,36 +206,6 @@ a.documenter.button:hover {
 #documenter-drawer a:hover {
 	color: #fff;
 }
-
-/*================================================
-	DRAWER HEADINGS
-================================================*/
-
-#documenter-drawer h1, #documenter-drawer h2, #documenter-drawer h3, #documenter-drawer h4 {
-	text-shadow: -1px 2px 3px rgba(39,39,38,0.5);
-	background: transparent;
-	border-bottom: 1px solid rgba(219,219,219,0.1);
-}
-
-#documenter-drawer h2, #documenter-drawer h1 {
-	margin: 2em 0 1.7em 0;
-	padding: 0 0 1.2em 0;
-}
-
-#documenter-drawer h3 {
-	margin: 2em 0 1em 0;
-	padding: 0 0 0.5em;
-	position: relative;
-}
-
-#documenter-drawer h4 {
-	margin: 0;
-	border: none;
-}
-
-/*================================================
-	DRAWER LISTS 
-================================================*/
 
 #documenter-drawer ul {
 	list-style-type: disc;
@@ -215,24 +224,57 @@ a.documenter.button:hover {
 	content: counters(section, ".") ". ";
 }
 
-#documenter-drawer ul, #documenter-drawer ol {
+#documenter-drawer ul, 
+#documenter-drawer ol {
 	margin: 0 0 1.5em 0;
 	list-style-position: inside;
 }
 
-#documenter-drawer ul li li, #documenter-drawer ol li li {
+#documenter-drawer ul li li, 
+#documenter-drawer ol li li {
 	margin-left: 1.5em;
 }
 
-#documenter-drawer dt {font-weight: bold;}
+#documenter-drawer dt {
+	font-weight: bold;
+}
 
-#documenter-drawer dd {margin-bottom: 1em;}
+#documenter-drawer dd {
+	margin-bottom: 1em;
+}
+
+
+#documenter-drawer div.block {
+	margin: 1em 0 2em;
+}
+
+#documenter-drawer div.documenter-content p:first-child,
+#documenter-drawer div.documenter-content ul:first-child,
+#documenter-drawer div.documenter-content ol:first-child {
+	padding-top: 19px;
+}
+
+#documenter-drawer div.block p:first-child,
+#documenter-drawer div.block ul:first-child,
+#documenter-drawer div.block ol:first-child {
+	padding-top: 0;
+}
+
+#documenter-drawer div.block p:last-child,
+#documenter-drawer div.block ul:last-child,
+#documenter-drawer div.block ol:last-child {
+	margin-bottom: 0;
+}
+
 
 /*================================================
 	DRAWER TABLES 
 ================================================*/
 
-#documenter-drawer th:first-child, #documenter-drawer td:first-child {padding-left:19px;}
+#documenter-drawer th:first-child, 
+#documenter-drawer td:first-child {
+	padding-left: 19px;
+}
 
 #documenter-drawer table {
 	margin-bottom: 1.5em;
@@ -251,7 +293,9 @@ a.documenter.button:hover {
 	padding: 0.67em 19px 0.67em 0;
 }
 
-#documenter-drawer tr:nth-child(2n+1) td {background-color: #3a3a3a;}
+#documenter-drawer tr:nth-child(2n+1) td {
+	background-color: #3a3a3a;
+}
 
 /*================================================
 	DRAWER OTHER
