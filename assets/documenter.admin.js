@@ -25,7 +25,10 @@
 			content = drawer.children();
 		
 		// Don't execute inside subsections
-		if(window.top !== window) return;
+		if(window.top !== window) {
+			button.remove();
+			return;	
+		}
 								
 	/*---- Events -----------------------------------------------------------*/
 		
