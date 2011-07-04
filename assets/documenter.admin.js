@@ -146,16 +146,6 @@
 		// Check for existing system messages
 		notice();
 		
-		// Restore documenter state
-		if(localStorage && (window.location == window.parent.location)) {
-			if(localStorage.getItem('documenter-' + Symphony.Context.get('root')) == 'active') {
-				show(0);
-			}
-		}
-		else {
-			hide(0);
-		}
-		
 		// Prepare content toggling
 		content.find('h3').each(function() {
 			var headline = $(this);
@@ -170,6 +160,15 @@
 		// Hide content blocks
 		content.find('.block').hide(); 
 		
+		// Restore documenter state
+		if(localStorage && (window.location == window.parent.location)) {
+			if(localStorage.getItem('documenter-' + Symphony.Context.get('root')) == 'active') {
+				show(0);
+			}
+		}
+		else {
+			hide(0);
+		}		
 	});
 
 })(jQuery.noConflict());	
