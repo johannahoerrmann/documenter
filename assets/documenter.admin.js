@@ -139,6 +139,11 @@
 		var toggle = function(headline) {
 			headline.find('a.toggle').toggleClass('open');
 			headline.next('div.block').slideToggle('fast');
+			
+			// Adjust height
+			wrapper.animate({
+				'min-height': drawer.outerHeight();
+			}, 'fast');
 		};
 			
 	/*---- Initialisation ---------------------------------------------------*/
