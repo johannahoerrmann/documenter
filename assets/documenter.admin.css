@@ -29,7 +29,7 @@ body {
 }
 
 /*================================================
-	BUTTON
+	BUTTONS
 ================================================*/
 
 a.documenter.button {
@@ -63,6 +63,69 @@ a.documenter.button:hover {
 	color: #fff;
 	border-color: rgba(155, 155, 155, 0.5);
 }
+
+#documenter-drawer a.documenter.toggle {
+	position: absolute;
+	top: -6px;
+	right: 0;
+	border: 1px solid rgba(155, 155, 155, 0.2);	
+	border-radius: 1em;
+	-webkit-border-radius: 1em;
+	-moz-border-radius: 1em;
+	font-weight: normal;
+	font-size: 11px;
+	background: #2a2a26;
+	color: rgba(255, 255, 255, 0.7);
+	text-decoration: none;
+	height: 15px;
+	line-height: 1;
+	margin: 2px 0;
+	
+/*	Pfeil nach unten*/
+/*	padding: 3px 5px 0 9px;*/
+	
+/*	Pfeil nach rechts*/
+	padding: 1px 6px 2px 8px;
+}
+
+#documenter-drawer a.documenter.toggle span {
+/*	Pfeil nach unten*/
+/*	-moz-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	transform:rotate(90deg);*/
+	
+	display: block;
+	font-size: 13px;
+}
+
+#documenter-drawer a.documenter.toggle.open {
+/*	Pfeil nach oben*/
+/*	padding: 3px 9px 0 5px;*/
+
+/*	Pfeil nach unten*/
+	padding: 3px 5px 0 9px;
+}
+
+#documenter-drawer a.documenter.toggle.open span {
+/*	Pfeil nach oben*/
+/*	-moz-transform:rotate(270deg);
+	-webkit-transform:rotate(270deg);
+	-o-transform:rotate(270deg);
+	transform:rotate(270deg);*/
+	
+/*	Pfeil nach unten*/
+	-moz-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	transform:rotate(90deg);	
+}
+
+#documenter-drawer a.documenter.toggle:hover {
+	color: #fff;
+	border-color: rgba(155, 155, 155, 0.5);
+}
+
 
 /*================================================
 	DRAWER DEFAULTS
@@ -123,6 +186,7 @@ a.documenter.button:hover {
 #documenter-drawer h3 {
 	margin: 2em 0 1em 0;
 	padding: 0 0 0.5em;
+	position: relative;
 }
 
 #documenter-drawer h4 {
