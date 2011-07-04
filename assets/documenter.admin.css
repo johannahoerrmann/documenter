@@ -80,41 +80,19 @@ a.documenter.button:hover {
 	height: 15px;
 	line-height: 1;
 	margin: 2px 0;
-	
-/*	Pfeil nach unten*/
-/*	padding: 3px 5px 0 9px;*/
-	
-/*	Pfeil nach rechts*/
 	padding: 1px 6px 2px 8px;
 }
 
 #documenter-drawer a.documenter.toggle span {
-/*	Pfeil nach unten*/
-/*	-moz-transform:rotate(90deg);
-	-webkit-transform:rotate(90deg);
-	-o-transform:rotate(90deg);
-	transform:rotate(90deg);*/
-	
 	display: block;
 	font-size: 13px;
 }
 
 #documenter-drawer a.documenter.toggle.open {
-/*	Pfeil nach oben*/
-/*	padding: 3px 9px 0 5px;*/
-
-/*	Pfeil nach unten*/
 	padding: 3px 5px 0 9px;
 }
 
 #documenter-drawer a.documenter.toggle.open span {
-/*	Pfeil nach oben*/
-/*	-moz-transform:rotate(270deg);
-	-webkit-transform:rotate(270deg);
-	-o-transform:rotate(270deg);
-	transform:rotate(270deg);*/
-	
-/*	Pfeil nach unten*/
 	-moz-transform:rotate(90deg);
 	-webkit-transform:rotate(90deg);
 	-o-transform:rotate(90deg);
