@@ -137,42 +137,76 @@
 		
 		// Toggle content blocks
 		var toggle = function(headline) {
+			var blocks = [];
+
+			// Toggle content block
 			headline.find('a.toggle').toggleClass('open');
 			headline.next('div.block').slideToggle('fast', function() {
 				wrapper.animate({
 					'min-height': drawer.outerHeight()
 				}, 'fast');			
 			});
+			
+			// Store open content blocks
+			content.find('h3:has(.open)').each(function() {
+				var text = $(this).text();
+				blocks.push(text);
+			});
+			
+			if(localStorage) {
+				localStorage.setItem('documenter-' + Symphony.Context.get('root') + '-blocks', JSON.stringify(blocks));
+			}
 		};
+		
+		// Load
+		var load = function() {
+			var status = 'inactive',
+				blocks = [];
+		
+			// Load storage
+			if(localStorage) {
+				status = localStorage.getItem('documenter-' + Symphony.Context.get('root'));
+				blocks = $.parseJSON(localStorage.getItem('documenter-' + Symphony.Context.get('root') + '-blocks'));
+			}
+
+			// Prepare content toggling
+			content.find('h3').each(function() {
+				var headline = $(this),
+					button = $('<a class="documenter toggle"><span>›</span></a>');
+				
+				// Add control
+				headline.append(button);
+				
+				// Wrap content blocks
+				headline.nextUntil('h3, div.note').wrapAll('<div class="block" />');
+				
+				// Restore state
+				if($.inArray(headline.text(), blocks) >= 0) {
+					button.toggleClass('open');
+					headline.next('.block').show(); 
+				}
+				else {
+					headline.next('.block').hide(); 
+				}
+			});
+			
+			// Display Documenter
+			if(status == 'active') {
+				show(0);
+			}
+			else {
+				hide(0);
+			}		
+		}
+		
 			
 	/*---- Initialisation ---------------------------------------------------*/
 		
 		// Check for existing system messages
 		notice();
 		
-		// Prepare content toggling
-		content.find('h3').each(function() {
-			var headline = $(this);
-			
-			// Add control
-			headline.append('<a class="documenter toggle"><span>›</span></a>');
-			
-			// Wrap content blocks
-			headline.nextUntil('h3, div.note').wrapAll('<div class="block" />');
-		});
-		
-		// Hide content blocks
-		content.find('.block').hide(); 
-		
-		// Restore documenter state
-		if(localStorage && (window.location == window.parent.location)) {
-			if(localStorage.getItem('documenter-' + Symphony.Context.get('root')) == 'active') {
-				show(0);
-			}
-		}
-		else {
-			hide(0);
-		}		
+		// Prepare Documenter
+		load();
 	});
 
 })(jQuery.noConflict());	
