@@ -23,11 +23,14 @@
 			help = button.text(),
 			drawer = $('#documenter-drawer'),
 			content = drawer.children();
+		
+		// Don't execute inside subsections
+		if(window.top !== window) return;
 								
 	/*---- Events -----------------------------------------------------------*/
 		
 		// Toggle documentation
-		button.click(function(event) {
+		button.click(function() {
 
 			// Hide documentation
 			if(button.is('.active')) {
@@ -41,12 +44,15 @@
 			}
 		});
 						
-		// Detect live notices
-		$('#header').bind('DOMSubtreeModified', function() {
-			notice();
-		});
+		// Detect resized notices
 		$(window).bind('resize', function() {
 			notice();
+		});
+		
+		// Toggle content blocks
+		content.delegate('h3', 'click', function() {
+			var headline = $(this);
+			toggle(headline);
 		});
 		
 	/*---- Functions --------------------------------------------------------*/
@@ -124,7 +130,13 @@
 				button.css('top', 16);
 				drawer.css('padding-top', 0);
 			}
-		}
+		};
+		
+		// Toggle content blocks
+		var toggle = function(headline) {
+			headline.find('a.toggle').toggleClass('open');
+			headline.next('div.block').slideToggle('fast');
+		};
 			
 	/*---- Initialisation ---------------------------------------------------*/
 		
@@ -145,6 +157,20 @@
 		if(window.location != window.parent.location) {
 			button.remove();
 		}
+		
+		// Prepare content toggling
+		content.find('h3').each(function() {
+			var headline = $(this);
+			
+			// Add control
+			headline.append('<a class="documenter toggle"><span>›</span></a>');
+			
+			// Wrap content blocks
+			headline.nextUntil('h3').wrapAll('<div class="block" />');
+		});
+		
+		// Hide content blocks
+		content.find('.block').hide(); 
 		
 	});
 
