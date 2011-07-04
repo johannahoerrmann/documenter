@@ -161,7 +161,7 @@
 			headline.append('<a class="documenter toggle"><span>›</span></a>');
 			
 			// Wrap content blocks
-			headline.nextUntil('h3').wrapAll('<div class="block" />');
+			headline.nextUntil('h3, div.note').wrapAll('<div class="block" />');
 		});
 		
 		// Hide content blocks

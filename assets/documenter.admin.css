@@ -229,6 +229,14 @@ a.documenter.button:hover {
 	padding: 0.1em 0.2em;
 }
 
+#documenter-drawer div.note {
+	border: 1px solid #20201d;
+	background: #242421;
+	color: #a7a7a6;
+	padding: 0.5em;
+	margin: 2em 0 0 -0.5em;
+}
+
 #documenter-drawer div.block {
 	margin: 1em 0 2em;
 }
