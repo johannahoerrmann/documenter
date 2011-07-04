@@ -93,10 +93,10 @@ a.documenter.button:hover {
 }
 
 #documenter-drawer a.documenter.toggle.open span {
-	-moz-transform:rotate(90deg);
-	-webkit-transform:rotate(90deg);
-	-o-transform:rotate(90deg);
-	transform:rotate(90deg);	
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);	
 }
 
 #documenter-drawer a.documenter.toggle:hover {
@@ -221,6 +221,13 @@ a.documenter.button:hover {
 	margin-bottom: 1em;
 }
 
+#documenter-drawer code {
+	border: 1px solid #20201d;
+	background: #242421;
+	color: #a7a7a6;
+	font-size: 1em;
+	padding: 0.1em 0.2em;
+}
 
 #documenter-drawer div.block {
 	margin: 1em 0 2em;
