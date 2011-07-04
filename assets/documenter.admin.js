@@ -69,16 +69,10 @@
 				overflow: 'auto',
 				opacity: 1
 			}, speed, function() {
-				var height = drawer.outerHeight();
-					
-				// Set minimum height
-				if(height < $('body').height()) {
-					height = '100%';
-				}
-				wrapper.css({
-					'min-height': height
-				});
 			
+				// Set height
+				setHeight(0);
+				
 				// Set state
 				wrapper.addClass('documenter');
 				button.text('×').attr('title', Symphony.Language.get('Hide Documentation')).addClass('active').fadeIn('fast');			
@@ -142,9 +136,7 @@
 			// Toggle content block
 			headline.find('a.toggle').toggleClass('open');
 			headline.next('div.block').slideToggle('fast', function() {
-				wrapper.animate({
-					'min-height': drawer.outerHeight()
-				}, 'fast');			
+				setHeight('fast');
 			});
 			
 			// Store open content blocks
@@ -197,8 +189,22 @@
 			else {
 				hide(0);
 			}		
-		}
+		};
 		
+		// Set minimum height
+		var setHeight = function(speed) {
+			var height = drawer.outerHeight();
+		
+			// Compare to body
+			if(height < $('body').height()) {
+				height = '100%';
+			}
+			
+			// Set height
+			wrapper.animate({
+				'min-height': height
+			}, speed);			
+		};
 			
 	/*---- Initialisation ---------------------------------------------------*/
 		
