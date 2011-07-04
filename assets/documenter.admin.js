@@ -153,11 +153,6 @@
 			hide(0);
 		}
 		
-		// Remove help in subsections
-		if(window.location != window.parent.location) {
-			button.remove();
-		}
-		
 		// Prepare content toggling
 		content.find('h3').each(function() {
 			var headline = $(this);
