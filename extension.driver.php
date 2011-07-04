@@ -131,12 +131,18 @@
 
 				// Generate documentation panel
 				$docs = new XMLElement('div', NULL, array('id' => 'documenter-drawer'));
+				$count = 0;
 				foreach($items as $item) {
+					$title = array();
 				
 					// Add title
 					if(isset($item['title'])) {
+						if($count == 0) {
+							$title = array('id' => 'documenter-title');
+						}
+
 						$docs->appendChild(
-							new XMLElement('h2', $item['title'], array('id' => 'documenter-title'))
+							new XMLElement('h2', $item['title'], $title)
 						);
 					}
 
@@ -145,6 +151,7 @@
 						new XMLElement('div', $item['content_formatted'], array('class' => 'documenter-content'))
 					);
 
+					$count++;
 				}
 				// Append documentation
 				$context['parent']->Page->Body->appendChild($docs);
